@@ -36,7 +36,7 @@ LDFLAGS = -specs=linker.specs -g $(ARCH)
 objects =	$(patsubst $(dir_source)/%.s, $(dir_build)/%.o, \
 			$(patsubst $(dir_source)/%.c, $(dir_build)/%.o, \
 			$(call rwildcard, $(dir_source), *.s *.c))) \
-			$(dir_build)/default_splash.bmp.o
+			$(dir_build)/default_splash.png.o
 
 define bin2o
 	bin2s $< | $(AS) -o $(@)
@@ -60,7 +60,7 @@ $(dir_build)/$(name).elf: $(objects)
 $(dir_build)/%.bin.o: $(dir_build)/%.bin
 	@$(bin2o)
 
-$(dir_build)/default_splash.bmp.o: $(dir_data)/default_splash.bmp
+$(dir_build)/default_splash.png.o: $(dir_data)/default_splash.png
 	@$(bin2o)
 
 $(dir_build)/%.o: $(dir_source)/%.c

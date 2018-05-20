@@ -149,7 +149,7 @@ void nxboot_main(uint8_t *fb_addr) {
     }
 
     /* Display splash screen. */
-    display_splash_screen_bmp(loader_ctx->custom_splash_path, fb_addr);
+    display_splash_screen_png(loader_ctx->custom_splash_path, fb_addr);
 
     rawmmcdev_unmount_all();
 
